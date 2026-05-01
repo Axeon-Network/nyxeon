@@ -1,0 +1,211 @@
+/* 
+    Kuro/ModularDelta InfoBox Stylesheet File
+    Written by KitSixtyFour/StupidBiFox
+    Copyright 2025-2026 Axeon Network.
+
+    Licensed under the MIT License, which is included below:
+
+    Copyright 2025-2026 Axeon Network
+    
+    Permission is hereby granted, free of charge, to any person obtaining a copy 
+    of this software and associated documentation files (the “Software”), to deal 
+    in the Software without restriction, including without limitation the rights 
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+    of the Software, and to permit persons to whom the Software is furnished to do so,
+    subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies 
+    or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+    INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+    PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+    FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+    OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+    DEALINGS IN THE SOFTWARE.
+
+*/
+
+/* variables */
+:root {
+    /* dark mode */
+    --infobox-bg-dark: #202122;
+    --infobox-border-dark: #161616;
+
+    /* light mode */
+    --infobox-bg-light: #f8f9fa;
+    --infobox-border-light: #a2a9b1;
+}
+
+html {
+    --infobox-bg: var(--infobox-bg-dark);
+    --infobox-border: var(--infobox-border-dark);
+}
+
+html.light-mode {
+    --infobox-bg: var(--infobox-bg-light);
+    --infobox-border: var(--infobox-border-light);
+}
+html.infobox-title,
+html.seriesbox-title {
+    text-shadow: 0px 0px 3px black;
+}
+.infobox-title.light-mode,
+.seriesbox-title.light-mode {
+    text-shadow: none !important;
+}
+
+.infobox p,
+.seriesbox p {
+    font-size: 13px !important;
+    margin-bottom: -2px;
+}
+
+.infobox {
+    width: 320px; 
+    float: right; 
+    clear: right;
+    margin-left: 10px;
+    margin: 0 0 1em 1em; /* top, right, bottom, left margin */
+    border: 1px solid var(--infobox-border);
+    background-color:  var(--infobox-bg);
+    color: var(--text-color);
+    font-size: 12px !important;
+    line-height: 1.4S !important;
+    box-shadow: none;
+}
+
+.seriesbox {
+    width: 320px; 
+    float: right; 
+    clear: right;
+    margin: 0 0 1em 1em; /* top, right, bottom, left margin */
+    border: 1px solid var(--infobox-border);
+    background-color:  var(--infobox-bg);
+    color: var(--text-color);
+    font-size: 12px !important;
+    line-height: 1.4;
+}
+
+.infobox-title {
+    width: 322px;
+    height: auto;
+    text-align: center;
+    font-size: 100%;
+    font-weight: bold;
+    color: var(--text-color);
+    float: right;
+    overflow-wrap:break-word;
+}
+
+.seriesbox-title {
+    width: 322px;
+    height: auto;
+    text-align: center;
+    font-size: 100%;
+    font-weight: bold;
+    color: var(--text-color);
+    float: right;
+    overflow-wrap:break-word;
+    margin: 0 !important;
+}
+
+/* img style + container */
+.infobox-img-container {
+    padding: 0;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.infobox-img {
+    max-width: 97%; /* wont go full width as its weird like that */
+    height: auto;
+    display: block;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    display: block !important;
+    box-shadow: none !important; /* just so it doesnt look weird */
+}
+
+.infobox-img-caption {
+    padding-top: 8px;
+    padding-bottom: 6px;
+    text-align: center;
+}
+
+.computer-desktop {
+    min-width: 97% !important;
+    margin-top: -8px !important;
+}
+
+/* table style */
+.infobox-data-table {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+}
+
+.seriesbox-data-table {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+/* table rows */
+.infobox-data-table tr,
+.seriesbox-data-table tr {
+    border-bottom: none;
+}
+
+.infobox-data-table tr:last-child,
+.seriesbox-data-table tr:last-child {
+    border-bottom: none;
+}
+
+.infobox-img-caption-2 {
+    margin-top: 2px;
+    margin-bottom: 6px !important;
+    margin-left: 5px;
+    margin-right: 5px;
+    opacity: 0.6;
+}
+
+/* table headers */
+.infobox-data-table th {
+    text-align: left;
+    font-weight: bold;
+    padding: 0.3em 0.6em;
+    width: 40%;
+    vertical-align: top;
+    padding-top: -20px !important;
+}
+
+.seriesbox-data-table th {
+    text-align: center;
+    font-weight: bold;
+    padding: 0.3em 0.6em;
+    width: 40%;
+}
+
+/* value column */
+.infobox-data-table td {
+    padding: 0.3em 0.9em;
+    text-align: left;
+    justify-content: center;
+    word-wrap: break-word;
+}
+
+.seriesbox-data-table td {
+    padding: 0.3em 0.6em;
+    word-wrap: break-word;
+    vertical-align: top;
+}
+
+.delta-infobox-computer-integrated {
+    vertical-align: top;
+}

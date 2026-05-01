@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }} - {{ page.title }}</title>
+
+    <!-- import the fucks -->
+    <link rel="stylesheet" href="./resources/delta/css/infobox.css">
+    <link rel="stylesheet" href="./resources/delta/css/global.css">
+    <link rel="stylesheet" href="./resources/delta/css/gallery.css">
+    <link rel="stylesheet" href="./resources/delta/css/springviewer.css">
+    <script src="./resources/delta/js/springviewer.js"></script> 
+    <link rel="stylesheet" href="./resources/css/style.css">
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const storageKey = 'onekoEnabled';
+            const scriptId = 'onekoTag';
+            const scriptSrc = './resources/delta/js/oneko.js';
+        
+            function loadScript() {
+                if (document.getElementById(scriptId)) return;
+                const el = document.createElement('script');
+                el.id = scriptId;
+                el.src = scriptSrc;
+                el.defer = true;
+                document.body.appendChild(el);
+            }
+        
+            const enabled = localStorage.getItem(storageKey) === '1';
+            if (enabled) {
+                loadScript();
+            }
+        });
+        </script>
+    <div class="cm-header">
+        <div class="cm-site-title">
+            {{ site.title }}
+        </div>
+        <div class="cm-header-links">
+            <a href="./">Home</a> ~
+            <a href="./Settings">Settings</a> ~
+            <a href="./Sitemap">Sitemap</a> ~
+            <a href="./Deltari:Test_Page">Debug</a>
+        </div>
+    </div>
+    <div class="cm-contentbox">
+        <div class="cm-content">
+            <div class="hatnote">{{ page.hatnote | markdownify }}</div>
+            <div class="cm-title">{{ page.title }}</div>
+            <hr>
+            {{content}}
+        </div>
+    </div>
+    <p class="copyver" style="text-align:center;margin-top:15px;text-shadow:0 0 6px black;">&copy; {{ site.copyyear }} {{ site.author }}. Licensed under <a href="{{ site.licenseurl }}">{{ site.license }}</a></p>
+    <p class="copyver" style="text-align:center; color:white; opacity:75%;font-size:small;margin-top:-15px; text-shadow:0 0 6px black;">{{ site.productname }} {{ site.devphase-s }} Version {{ site.version.major }}.{{ site.version.minor }} (Build {{ site.version.build }})</p>
+    <br>
+    {% include springviewer.html %}
+    {% if site.debug %}
+          <p id=watermark>
+            &nbsp;{% if site.privatebuild %}For testing purposes only. {% endif %}Pre-Release {{ site.productname }} {{ site.devphase }} Version {{ site.version.major }}.{{ site.version.minor }} (Build {{ site.version.build }}{% if site.buildlabex %}.{{ site.version.id }}.{{ site.version.lab }}.{{ site.version.timestamp }}{% endif %})&nbsp;
+          </p>
+    {% endif %}
+</body>
+</html>

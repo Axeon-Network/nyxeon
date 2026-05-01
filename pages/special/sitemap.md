@@ -1,4 +1,5 @@
 ---
+layout: custom
 title: Sitemap
 permalink: Sitemap
 search_exclude: true

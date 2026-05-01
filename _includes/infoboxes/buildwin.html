@@ -1,0 +1,79 @@
+<div class="infobox-title">
+    {{ include.buildtag | default: "Untitled InfoBox" }}
+</div>
+<div class="infobox mdl-shadow--4dp">    
+    {% if include.image %}
+    <div class="infobox-img-container">
+        <div class="infobox-img-caption">Build of {{ include.buildof | markdownify | remove_first: '<p>' | remove: '</p>' }}</div> <!-- we strip out the p items so it works fine-->
+            <img src="{{ site.mediaurl }}/{{ include.image }}" alt="{{ include.image_caption }}" class="infobox-img">
+            {% if include.image_caption %}
+            <p class="infobox-img-caption-2" style="font-size: 12px !important;">{{ include.image_caption }}</p>
+            {% endif %}
+        </div>
+    {% endif %}
+    {% if include.image2 %}
+    <div class="infobox-img-container">
+            <img src="{{ site.mediaurl }}/{{ include.image2 }}" alt="{{ include.image2_caption }}" class="infobox-img">
+            {% if include.image2_caption %}
+            <p class="infobox-img-caption-2" style="font-size: 12px !important;">{{ include.image2_caption }}</p>
+            {% endif %}
+        </div>
+    {% endif %}
+    {% if include.image3 %}
+    <div class="infobox-img-container">
+            <img src="{{ include.image3 }}" alt="{{ include.image3_caption }}" class="infobox-img">
+            {% if include.image3_caption %}
+            <p class="infobox-img-caption-2" style="font-size: 12px !important;">{{ include.image3_caption }}</p>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <table class="infobox-data-table">
+        <tbody>
+            {% if include.release_name %}
+            <tr>
+                <th>Release name</th>
+                <td>{{ include.release_name }}</td>
+            </tr>
+            {% endif %}
+            <tr>
+                <th>OS family</th>
+                <td>{{ include.family | markdownify | remove_first: '<p>' | remove: '</p>' }}</td>
+            </tr>
+            <tr>
+                <th>Version number</th>
+                <td>{{ include.version }}</td>
+            </tr>
+            {% if include.build %}
+            <tr>
+                <th>Build number</th>
+                <td>{{ include.build }}</td>
+            </tr>
+            {% endif %}
+            {% if include.lab %}
+            <tr>
+                <th>Build lab</th>
+                <td>{{ include.lab | markdownify | remove_first: '<p>' | remove: '</p>' }}</td>
+            </tr>
+            {% endif %}
+            {% if include.arch %}
+            <tr>
+                <th>Architecture</th>
+                <td>{{ include.arch | markdownify | remove_first: '<p>' | remove: '</p>' }}</td>
+            </tr>
+            {% endif %}
+            {% if include.compiled %}
+            <tr>
+                <th>Compiled on</th>
+                <td>{{ include.compiled }}</td>
+            </tr>
+            {% endif %}
+            </tbody>
+    </table>
+    <p style="padding-top:2px; text-align:center !important;font-size: 12px !important;"><b class="wininfo-subheader">SKUs</b></p>
+    <p style="margin-top:3px !important; text-align:center !important;font-size: 12px !important; line-height: 1.7 !important;">{{ include.skus }}</p>
+    <p style="padding-top:2px; text-align:center !important;font-size: 12px !important;"><b class="wininfo-subheader">Product key</b></p>
+    <p style="margin-top:5px !important; text-align:center !important;font-size: 12px !important; line-height: 1.7 !important;">{{ include.prodkey }}</p>
+    <p style="text-align:center !important;font-size: 12px !important;"><b>About dialog</b></p>
+    <img src="{{ site.mediaurl }}/{{ include.winver }}" style="padding-top: 10px; padding-bottom: 10px; width: 50%; display: flex; justify-content: center; margin: 0 auto; box-shadow: none !important;">
+</div>

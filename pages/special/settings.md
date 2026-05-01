@@ -1,27 +1,28 @@
 ---
+layout: custom
 title: Settings
 permalink: Settings
 search_exclude: true
 ---
 
-SETTINGS PAGEEEE
+Customize your experience
 
 <!-- Settings Toggles -->
 <header>
-    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="darkModeToggle">
-        <input type="checkbox" id="darkModeToggle" class="mdl-switch__input">
+    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="darkModeToggle" title="Your layout is not compatible with light mode.">
+        <input type="checkbox" id="darkModeToggle" class="mdl-switch__input" disabled>
         <span class="mdl-switch__label">Light Mode</span>
     </label>
 </header>
 <header>
     <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="onekoToggle">
         <input type="checkbox" id="onekoToggle" class="mdl-switch__input">
-        <span class="mdl-switch__label">Cat friend :3</span>
+        <span class="mdl-switch__label">Oneko</span>
     </label>
 </header>
 
 <!-- Scripts for the toggles -->
-<script>
+<!-- <script>
 document.addEventListener('DOMContentLoaded', () => {
     const toggleInput = document.getElementById('darkModeToggle');
     const toggleLabel = toggleInput.parentElement; 
@@ -67,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     syncToggleState();
 });
-</script>
+</script> -->
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
