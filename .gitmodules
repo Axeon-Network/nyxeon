@@ -1,0 +1,3 @@
+[submodule "pages/articles"]
+	path = pages/articles
+	url = https://github.com/axeon-network/db-nyxn.git
