@@ -1,5 +1,4 @@
 <div align="center">
-<img src="resources/img/logo.svg" width="30%">
 <h1>Nyxeon</h1>
 </div>
 <div align="center">
